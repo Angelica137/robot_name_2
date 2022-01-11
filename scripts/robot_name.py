@@ -13,12 +13,14 @@ def get_letters():
 
 def name_pool():
     names = []
-    for num in range(100, 1000):
+    numbers = (str(num).zfill(3) for num in range(1000))
+    for int in numbers:
         for char in get_letters():
-            names.append(char + str(num))
+            names.append(char + int)
     return names
 
 
 print(len(name_pool()))
-print(len(range(100, 1000)))
-print(676*900)
+numbers = (str(num).zfill(3) for num in range(1000))
+for int in numbers:
+    print(int)
