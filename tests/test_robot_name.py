@@ -15,3 +15,9 @@ def test_name_pool():
 
 def test_name_pool_has_WS324():
     assert "WS324" in name_pool()
+
+
+def test_name():
+    robot = Robot()
+    name_re = r'^[A-Z]{2}\d{3}$'
+    assert robot.name() == name_re
