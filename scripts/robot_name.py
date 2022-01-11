@@ -18,9 +18,3 @@ def name_pool():
         for char in get_letters():
             names.append(char + int)
     return names
-
-
-print(len(name_pool()))
-numbers = (str(num).zfill(3) for num in range(1000))
-for int in numbers:
-    print(int)
