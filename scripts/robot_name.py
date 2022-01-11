@@ -10,6 +10,3 @@ def get_letters():
         for elem in alphabet_2:
             robot_letters.append(char + elem)
     return robot_letters
-
-
-print(get_letters())
