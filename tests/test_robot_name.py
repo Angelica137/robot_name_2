@@ -11,3 +11,7 @@ def test_get_letters_has_YX():
 
 def test_name_pool():
     assert len(name_pool()) == 676000
+
+
+def test_name_pool_has_WS324():
+    assert "WS324" in name_pool()
