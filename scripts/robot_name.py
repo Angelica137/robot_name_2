@@ -32,11 +32,3 @@ class Robot:
         random.shuffle(n)
         self.name = n.pop(0)
         return self.name
-
-
-robot = Robot()
-n = name_pool()
-random.shuffle(n)
-x = n.pop(0)
-print(x)
-print(len(n))
