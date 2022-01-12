@@ -21,11 +21,22 @@ def name_pool():
     return names
 
 
+n = name_pool()
+
+
 class Robot:
     def __init__(self):
         self.name = self.reset()
-        pass
 
     def reset(self):
-        self.name = random.choice(name_pool())
+        random.shuffle(n)
+        self.name = n.pop(0)
         return self.name
+
+
+robot = Robot()
+n = name_pool()
+random.shuffle(n)
+x = n.pop(0)
+print(x)
+print(len(n))
