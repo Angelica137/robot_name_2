@@ -1,14 +1,15 @@
 import string
 import random
+from itertools import product
 
 
 def get_letters():
     alphabet = list(string.ascii_uppercase)
     alphabet_2 = alphabet.copy()
-    robot_letters = []
-    for char in alphabet:
-        for elem in alphabet_2:
-            robot_letters.append(char + elem)
+    robot_letters = (''.join(p) for p in product(alphabet, alphabet_2))
+    # for char in alphabet:
+    #    for elem in alphabet_2:
+    #        robot_letters.append(char.join(elem))
     return robot_letters
 
 
@@ -32,3 +33,8 @@ class Robot:
         random.shuffle(n)
         self.name = n.pop()
         return self.name
+
+
+r = Robot()
+print(r.name)
+print(type(get_letters()))
