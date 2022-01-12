@@ -30,5 +30,5 @@ class Robot:
 
     def reset(self):
         random.shuffle(n)
-        self.name = n.pop(0)
+        self.name = n.pop()
         return self.name
