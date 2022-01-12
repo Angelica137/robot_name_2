@@ -1,4 +1,5 @@
 import string
+import random
 
 
 def get_letters():
@@ -18,3 +19,13 @@ def name_pool():
         for char in get_letters():
             names.append(char + int)
     return names
+
+
+class Robot:
+    def __init__(self):
+        self.name = self.reset()
+        pass
+
+    def reset(self):
+        self.name = random.choice(name_pool())
+        return self.name
