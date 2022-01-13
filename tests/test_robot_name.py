@@ -15,7 +15,10 @@ def test_get_letters_has_YX():
 
 
 def test_name_pool():
-    assert len(name_pool()) == 676000
+    length = []
+    for i in name_pool():
+        length.append(i)
+    assert len(length) == 676000
 
 
 def test_name_pool_has_WS324():
