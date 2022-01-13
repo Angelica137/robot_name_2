@@ -7,9 +7,14 @@ def get_letters():
     alphabet = list(string.ascii_uppercase)
     alphabet_2 = alphabet.copy()
     robot_letters = []
+    pairs = product(alphabet, alphabet_2)    # O(n^2)
+    for pair in pairs:
+        robot_letters.append(''.join(pair))  # O(1) + O(n)
+    '''
     for char in alphabet:
         for elem in alphabet_2:
             robot_letters.append(char + elem)
+		'''
     return robot_letters
 
 
