@@ -1,5 +1,6 @@
 import string
 import random
+from itertools import product
 
 
 def get_letters():
@@ -29,6 +30,8 @@ class Robot:
         self.name = self.reset()
 
     def reset(self):
+        if not n:
+            raise RuntimeError("No names available")
         random.shuffle(n)
         self.name = n.pop()
         return self.name
