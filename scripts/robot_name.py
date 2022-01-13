@@ -1,6 +1,6 @@
 import string
 import random
-from itertools import combinations, product
+from itertools import product
 
 
 def get_letters():
@@ -41,5 +41,6 @@ numbers = (str(num).zfill(3) for num in range(1000))
 n = product(get_letters(), numbers)
 print(n)
 names = (''.join(elem) for elem in n)
+random.shuffle(names)
 print(names)
 print(next(names))
