@@ -4,7 +4,10 @@ import random
 
 
 def test_get_letters():
-    assert len(get_letters()) == 676
+    length = []
+    for elem in get_letters():
+        length.append(elem)
+    assert len(length) == 676
 
 
 def test_get_letters_has_YX():

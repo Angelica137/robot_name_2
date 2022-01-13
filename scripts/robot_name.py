@@ -1,29 +1,23 @@
 import string
 import random
-from itertools import product
+from itertools import combinations, product
 
 
 def get_letters():
     alphabet = list(string.ascii_uppercase)
     alphabet_2 = alphabet.copy()
-    robot_letters = []
     pairs = product(alphabet, alphabet_2)    # O(n^2)
-    for pair in pairs:
-        robot_letters.append(''.join(pair))  # O(1) + O(n)
-    '''
-    for char in alphabet:
-        for elem in alphabet_2:
-            robot_letters.append(char + elem)
-		'''
+    robot_letters = (''.join(pair) for pair in pairs)  # O(n)
     return robot_letters
 
 
 def name_pool():
-    names = []
     numbers = (str(num).zfill(3) for num in range(1000))
-    for int in numbers:
-        for char in get_letters():
-            names.append(char + int)
+    combinations = product(get_letters(), numbers)
+    names = (''.join(elem) for elem in combinations)
+    # for int in n:
+    #    for char in get_letters():
+    #        names.append(char + int)
     return names
 
 
@@ -38,5 +32,14 @@ class Robot:
         if not n:
             raise RuntimeError("No names available")
         random.shuffle(n)
-        self.name = n.pop()
+        #self.name = n.pop()
+        self.name = next(n)
         return self.name
+
+
+numbers = (str(num).zfill(3) for num in range(1000))
+n = product(get_letters(), numbers)
+print(n)
+names = (''.join(elem) for elem in n)
+print(names)
+print(next(names))
