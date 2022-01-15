@@ -1,33 +1,20 @@
-def get_letters():
-    initialise list of letters -> O(n)
-    copy list of letters -> O(n)
-    initialise empty list -> O(1)
-    for char in list 1: -> O(n)
-        for elem in list 2: -> O(n)
-            concatenate the letters -> O(n^2)
-						and add them to the empty list -> O(1)
-    return the new list -> O(1)
-
-TOTAL: O(n) + O(n) + O(n) * O(n) + O(n^2) + O(1) +O(1)
-       O(n^2) + O(n^2)
-       O(n^2)
-
-
 def name_pool():
-    initilaise empty list -> O(1)
+    initialise a list containing the letters -> O(n)
+    calcualte a cartesian product of the letter list with itself -> O(n^2)
+    join the resulting paris -> O(n)
     create a range from 0 to 1000 -> O(1)
 		adding zeros as needed -> O(n)
-    for int in numbers range -> O(n)
-        for char in get_letters list: -> O(n^2)
-            concatenate the elments  -> O(n^2)
-						and append to empty list -> O(1)
+    calculate a cartesian product fo the letters and the numbers -> O(n^2)
+    join the resulting tupples -> O(n)
     return new list -> O(1)
-TOTAL: O(n^2) + O(n^2) + O(n^2)
+TOTAL: O(n) + O(n^2) + O(n) + O(1) + + O(n) + O(n^2) + O(n) + O(1)
        O(n^2)
 
 
 def reset():
-    shuffle the name pool -> O(n) + O(n^2)
-    pop the first element in the shuffled list -> O(n)
+		calculate n -> O(n^2)
+    check if n is empty -> O(n)
+    shuffle the name pool -> O(n)
+    pop the last element in the shuffled list -> O(1)
     return the popped element -> O(1)
 TOTAL: O(n^2)
