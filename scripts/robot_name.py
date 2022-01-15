@@ -26,8 +26,8 @@ class Robot:
         self.name = self.reset()
 
     def reset(self):
-        if not n:  # O(n^2)
-            raise RuntimeError("No names available")  # O(n)
+        if not n:  # O(n)
+            raise RuntimeError("No names available")  # O(1)
         random.shuffle(n)  # O(n)
         self.name = n.pop()  # O(1)
         return self.name
