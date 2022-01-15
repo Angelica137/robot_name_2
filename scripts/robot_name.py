@@ -3,18 +3,13 @@ import random
 from itertools import product
 
 
-def get_letters():
-    alphabet = list(string.ascii_uppercase)  # O(n)
-    alphabet_2 = alphabet.copy()  # O(n)
-    pairs = product(alphabet, alphabet_2)    # O(n^2)
-    robot_letters = (''.join(pair) for pair in pairs)  # O(n)
-    return robot_letters
-
-
 def name_pool():
-    numbers = (str(num).zfill(3) for num in range(1000))  # O(n) + O(n)
-    combinations = product(get_letters(), numbers)  # O(n^2) + O(n^2)
-    names = list(''.join(elem) for elem in combinations)  # O(n^2) + O(n)
+    alphabet = list(string.ascii_uppercase)  # O(n)
+    letters = (''.join(pair)
+               for pair in product(alphabet, alphabet))  # O(n) + O(n^2)
+    numbers = (str(num).zfill(3) for num in range(1000))  # O(n)
+    names = list(''.join(elem)
+                 for elem in product(letters, numbers))  # O(n) + O(n^2)
     return names
 
 
