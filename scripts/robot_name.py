@@ -1,6 +1,7 @@
 import string
 import random
 from itertools import product
+from webbrowser import get
 
 
 def get_letters():
@@ -14,7 +15,7 @@ def get_letters():
 def name_pool():
     numbers = (str(num).zfill(3) for num in range(1000))
     combinations = product(get_letters(), numbers)
-    names = (''.join(elem) for elem in combinations)
+    names = list(''.join(elem) for elem in combinations)
     # for int in n:
     #    for char in get_letters():
     #        names.append(char + int)
@@ -32,15 +33,9 @@ class Robot:
         if not n:
             raise RuntimeError("No names available")
         random.shuffle(n)
-        #self.name = n.pop()
-        self.name = next(n)
+        self.name = n.pop()
         return self.name
 
 
-numbers = (str(num).zfill(3) for num in range(1000))
-n = product(get_letters(), numbers)
-print(n)
-names = (''.join(elem) for elem in n)
-random.shuffle(names)
-print(names)
-print(next(names))
+r = Robot()
+print(r.name)
