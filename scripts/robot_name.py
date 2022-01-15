@@ -1,7 +1,6 @@
 import string
 import random
 from itertools import product
-from webbrowser import get
 
 
 def get_letters():
@@ -16,9 +15,6 @@ def name_pool():
     numbers = (str(num).zfill(3) for num in range(1000))
     combinations = product(get_letters(), numbers)
     names = list(''.join(elem) for elem in combinations)
-    # for int in n:
-    #    for char in get_letters():
-    #        names.append(char + int)
     return names
 
 
