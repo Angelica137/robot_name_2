@@ -35,7 +35,3 @@ class Robot:
         random.shuffle(n)
         self.name = n.pop()
         return self.name
-
-
-r = Robot()
-print(r.name)
